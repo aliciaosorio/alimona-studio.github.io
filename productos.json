@@ -8,11 +8,12 @@
     "dimensiones": { "largo_cm": 5.5, "ancho_cm": 3.0 },
     "categoria": "geometrico",
     "diseno": "escalonado",
-    "colores": ["negro", "dorado"],
+    "colores": ["negro", "dorado", "plateado"],
     "precio_cop": 0,
     "foto": "Fotos/arete1.jpg",
-    "fotos": ["Fotos/arete1.jpg", "Fotos/arete1_detalle.jpeg", "Fotos/arete1_lifestyle.jpeg"],
-    "videos": [],
+    "fotos": ["Fotos/arete1.jpg", "Fotos/arete1-1.jpg", "Fotos/arete1-2.jpg"],
+    "videos": ["Fotos/arete1-v1.mp4"],
+    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -29,6 +30,7 @@
     "foto": "Fotos/arete2.jpg",
     "fotos": ["Fotos/arete2.jpg", "Fotos/arete2-1.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -45,6 +47,7 @@
     "foto": "Fotos/arete3.jpg",
     "fotos": ["Fotos/arete3.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -61,6 +64,7 @@
     "foto": "Fotos/arete4.jpg",
     "fotos": ["Fotos/arete4.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -77,6 +81,7 @@
     "foto": "Fotos/arete5.jpg",
     "fotos": ["Fotos/arete5.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 8,
     "disponible": true
   },
   {
@@ -93,6 +98,7 @@
     "foto": "Fotos/arete6.jpg",
     "fotos": ["Fotos/arete6.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -109,6 +115,7 @@
     "foto": "Fotos/arete7.jpg",
     "fotos": ["Fotos/arete7.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 2,
     "disponible": true
   },
   {
@@ -125,6 +132,7 @@
     "foto": "Fotos/arete8.jpg",
     "fotos": ["Fotos/arete8.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 3,
     "disponible": true
   },
   {
@@ -141,6 +149,7 @@
     "foto": "Fotos/arete9.jpg",
     "fotos": ["Fotos/arete9.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -157,6 +166,7 @@
     "foto": "Fotos/arete10.jpg",
     "fotos": ["Fotos/arete10.jpg", "Fotos/arete10-1.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -173,6 +183,7 @@
     "foto": "Fotos/arete11.jpg",
     "fotos": ["Fotos/arete11.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -187,8 +198,9 @@
     "colores": ["verde lima", "negro"],
     "precio_cop": 0,
     "foto": "Fotos/arete13.jpg",
-    "fotos": ["Fotos/arete13.jpg", "Fotos/arete13-1.jpg"],
+    "fotos": ["Fotos/arete13.jpg", "Fotos/arete13-1.jpg", "Fotos/arete13-2.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -205,6 +217,7 @@
     "foto": "Fotos/arete14.jpg",
     "fotos": ["Fotos/arete14.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -221,6 +234,7 @@
     "foto": "Fotos/arete15.jpg",
     "fotos": ["Fotos/arete15.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -237,6 +251,7 @@
     "foto": "Fotos/arete16.jpg",
     "fotos": ["Fotos/arete16.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -253,6 +268,7 @@
     "foto": "Fotos/arete17.jpg",
     "fotos": ["Fotos/arete17.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 3,
     "disponible": true
   },
   {
@@ -269,6 +285,7 @@
     "foto": "Fotos/arete18.jpg",
     "fotos": ["Fotos/arete18.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 7,
     "disponible": true
   },
   {
@@ -285,6 +302,7 @@
     "foto": "Fotos/arete19.jpg",
     "fotos": ["Fotos/arete19.jpg"],
     "videos": [],
+    "tiempo_tejido_horas": 3,
     "disponible": true
   }
 ]
