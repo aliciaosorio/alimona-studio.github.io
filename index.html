@@ -136,6 +136,14 @@
       border: 1px solid #e8e6e0;
       cursor: zoom-in;
     }
+    .modal-video-principal {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 1px solid #e8e6e0;
+      display: none;
+      background: #000;
+    }
     .modal-thumbnails {
       display: flex;
       gap: 8px;
@@ -149,8 +157,30 @@
       cursor: pointer;
       opacity: 0.6;
       transition: all 0.2s;
+      position: relative;
     }
     .thumbnail:hover, .thumbnail.activo { opacity: 1; border-color: #2c2c2a; }
+    .thumb-video-wrap {
+      width: 56px;
+      height: 56px;
+      border: 1px solid #e8e6e0;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.2s;
+      position: relative;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .thumb-video-wrap:hover, .thumb-video-wrap.activo { opacity: 1; border-color: #2c2c2a; }
+    .thumb-play-icon {
+      color: #fff;
+      font-size: 20px;
+      line-height: 1;
+      pointer-events: none;
+    }
     .modal-info { display: flex; flex-direction: column; gap: 10px; }
     .modal-nombre { font-size: 17px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.4; }
     .modal-precio-grande { font-size: 22px; margin-top: 4px; }
@@ -237,6 +267,7 @@
 
       <div class="modal-galeria">
         <img class="modal-img-principal" id="modal-img-principal" src="" alt="">
+        <video class="modal-video-principal" id="modal-video-principal" controls playsinline></video>
         <div class="modal-thumbnails" id="modal-thumbnails"></div>
       </div>
 
@@ -291,11 +322,19 @@
       renderizar(categoria);
     }
 
+    function esVideo(ruta) {
+      return /\.(mp4|webm|ogg)$/i.test(ruta);
+    }
+
     function abrirDetalle(id) {
       const p = productos.find(x => x.id === id);
       if (!p) return;
 
-      const fotos = p.fotos || [p.foto];
+      // Combinar fotos y videos en un solo array de medios
+      const medios = [
+        ...(p.fotos || [p.foto]),
+        ...(p.videos || [])
+      ];
 
       document.getElementById('modal-nombre').textContent = p.nombre;
       document.getElementById('modal-desc').textContent = p.descripcion_larga;
@@ -307,28 +346,54 @@
       document.getElementById('modal-whatsapp').href =
         `https://wa.me/57TUNUMERO?text=Hola! Me interesa el producto: ${encodeURIComponent(p.nombre)}`;
 
-      const imgPrincipal = document.getElementById('modal-img-principal');
-      imgPrincipal.src = fotos[0];
-      imgPrincipal.alt = p.nombre;
+      // Mostrar primer medio
+      mostrarMedio(medios[0]);
 
+      // Generar thumbnails
       const contenedor = document.getElementById('modal-thumbnails');
-      contenedor.innerHTML = fotos.map((f, i) => `
-        <img class="thumbnail ${i === 0 ? 'activo' : ''}"
-             src="${f}"
-             alt="${p.nombre} foto ${i+1}"
-             onclick="cambiarFoto(this, '${f}')">
-      `).join('');
+      contenedor.innerHTML = medios.map((m, i) => {
+        if (esVideo(m)) {
+          return `<div class="thumb-video-wrap ${i === 0 ? 'activo' : ''}" onclick="seleccionarMedio(this, '${m}')">
+                    <span class="thumb-play-icon">▶</span>
+                  </div>`;
+        } else {
+          return `<img class="thumbnail ${i === 0 ? 'activo' : ''}"
+                       src="${m}" alt="${p.nombre} ${i+1}"
+                       onclick="seleccionarMedio(this, '${m}')">`;
+        }
+      }).join('');
 
       document.getElementById('modal').style.display = 'flex';
     }
 
-    function cambiarFoto(thumb, src) {
-      document.getElementById('modal-img-principal').src = src;
-      document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('activo'));
+    function mostrarMedio(ruta) {
+      const img = document.getElementById('modal-img-principal');
+      const video = document.getElementById('modal-video-principal');
+
+      if (esVideo(ruta)) {
+        img.style.display = 'none';
+        video.style.display = 'block';
+        video.src = ruta;
+        video.play();
+      } else {
+        video.pause();
+        video.style.display = 'none';
+        img.style.display = 'block';
+        img.src = ruta;
+      }
+    }
+
+    function seleccionarMedio(thumb, ruta) {
+      // Quitar activo de todos los thumbnails (imágenes y videos)
+      document.querySelectorAll('.thumbnail, .thumb-video-wrap').forEach(t => t.classList.remove('activo'));
       thumb.classList.add('activo');
+      mostrarMedio(ruta);
     }
 
     function cerrarModal() {
+      const video = document.getElementById('modal-video-principal');
+      video.pause();
+      video.src = '';
       document.getElementById('modal').style.display = 'none';
     }
   </script>
