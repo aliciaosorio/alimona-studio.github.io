@@ -84,6 +84,12 @@
     .card-body { padding: 14px 16px; }
     .card-nombre { font-size: 14px; margin-bottom: 4px; }
     .card-desc { font-size: 12px; color: #aaa; letter-spacing: 0.04em; }
+    .card-precio {
+      font-size: 13px;
+      color: #2c2c2a;
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
 
     footer {
       border-top: 1px solid #e8e6e0;
@@ -97,34 +103,10 @@
     .footer-links a { font-size: 11px; color: #aaa; text-decoration: none; letter-spacing: 0.06em; }
     .footer-links a:hover { color: #2c2c2a; }
 
-    @media (max-width: 768px) {
-      nav, .hero, .filtros, .galeria, footer { padding-left: 24px; padding-right: 24px; }
-      .galeria { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .hero h1 { font-size: 26px; }
-    }
-    @media (max-width: 480px) {
-      .galeria { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-    .card-precio {
-      font-size: 13px;
-      color: #2c2c2a;
-      margin-top: 6px;
-      letter-spacing: 0.04em;
-    }
+    /* MODAL */
     .modal {
       display: none;
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(44,44,42,0.5);
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-    }
-    .modal {
-      display: none;
-      position: absolute;
+      position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
       background: rgba(44,44,42,0.5);
@@ -132,6 +114,7 @@
       justify-content: center;
       padding-top: 40px;
       z-index: 100;
+      overflow-y: auto;
     }
     .modal-box {
       background: #faf9f7;
@@ -143,6 +126,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
       position: relative;
+      margin-bottom: 40px;
     }
     .modal-galeria { display: flex; flex-direction: column; gap: 8px; }
     .modal-img-principal {
@@ -194,28 +178,31 @@
       transition: background 0.2s;
     }
     .btn-whatsapp:hover { background: #444; }
+
+    @media (max-width: 768px) {
+      nav, .hero, .filtros, .galeria, footer { padding-left: 24px; padding-right: 24px; }
+      .galeria { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .hero h1 { font-size: 26px; }
+      .modal-box { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .galeria { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
     <div class="marca">Alimona Studio</div>
-
-    <div class="modal" id="modal" onclick="cerrarModal()">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
-
-      <div class="modal-galeria">
-        <img class="modal-img-principal" id="modal-img-principal" src="" alt="">
-        <div class="modal-thumbnails" id="modal-thumbnails"></div>
-      </div>
-      
     <div class="nav-links">
       <a href="#galeria">Colección</a>
       <a href="#contacto">Contacto</a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-eyebrow">Joyería artesanal en miyuki · Medellín</div>
     <h1>Cada pieza, única</h1>
@@ -223,6 +210,7 @@
     <a href="#galeria" class="btn">Ver colección</a>
   </section>
 
+  <!-- FILTROS -->
   <div class="filtros">
     <button class="filtro activo" onclick="filtrar('todos', this)">Todos</button>
     <button class="filtro" onclick="filtrar('geometrico', this)">Geométricos</button>
@@ -230,8 +218,10 @@
     <button class="filtro" onclick="filtrar('minimalista', this)">Minimalistas</button>
   </div>
 
- <section class="galeria" id="galeria"></section>
+  <!-- GALERÍA -->
+  <section class="galeria" id="galeria"></section>
 
+  <!-- FOOTER -->
   <footer id="contacto">
     <div class="footer-marca">Alimona Studio · Bogotá · 2026</div>
     <div class="footer-links">
@@ -239,6 +229,29 @@
       <a href="https://instagram.com/alimonastudio" target="_blank">Instagram</a>
     </div>
   </footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal" onclick="cerrarModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+
+      <div class="modal-galeria">
+        <img class="modal-img-principal" id="modal-img-principal" src="" alt="">
+        <div class="modal-thumbnails" id="modal-thumbnails"></div>
+      </div>
+
+      <div class="modal-info">
+        <div class="modal-nombre" id="modal-nombre"></div>
+        <div class="modal-precio-grande" id="modal-precio"></div>
+        <div class="modal-fila">Descripción: <span id="modal-desc"></span></div>
+        <div class="modal-fila">Materiales: <span id="modal-materiales"></span></div>
+        <div class="modal-fila">Dimensiones: <span id="modal-dimensiones"></span></div>
+        <div class="modal-fila">Colores: <span id="modal-colores"></span></div>
+        <div class="modal-fila">Diseño: <span id="modal-diseno"></span></div>
+        <a class="btn-whatsapp" id="modal-whatsapp" href="#" target="_blank">Consultar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
 
   <script>
     let productos = [];
@@ -248,6 +261,10 @@
       .then(data => {
         productos = data;
         renderizar('todos');
+      })
+      .catch(() => {
+        document.getElementById('galeria').innerHTML =
+          '<p style="color:#aaa;padding:24px;">No se pudieron cargar los productos.</p>';
       });
 
     function renderizar(categoria) {
@@ -290,12 +307,10 @@
       document.getElementById('modal-whatsapp').href =
         `https://wa.me/57TUNUMERO?text=Hola! Me interesa el producto: ${encodeURIComponent(p.nombre)}`;
 
-      // Foto principal
       const imgPrincipal = document.getElementById('modal-img-principal');
       imgPrincipal.src = fotos[0];
       imgPrincipal.alt = p.nombre;
 
-      // Thumbnails
       const contenedor = document.getElementById('modal-thumbnails');
       contenedor.innerHTML = fotos.map((f, i) => `
         <img class="thumbnail ${i === 0 ? 'activo' : ''}"
@@ -317,6 +332,6 @@
       document.getElementById('modal').style.display = 'none';
     }
   </script>
-                                                                        
+
 </body>
 </html>
