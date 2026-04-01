@@ -1,0 +1,25 @@
+[
+  
+  {
+    "id": 1,
+    "nombre": "Aretes geométricos negro y dorado",
+    "descripcion_corta": "Diseño escalonado en negro y dorado",
+    "descripcion_larga": "Aretes tejidos a mano con la técnica peyote en cuentas japonesas miyuki delica. Su diseño geométrico escalonado combina el negro mate con detalles dorados que capturan la luz. Perfectos para ocasiones especiales o para elevar un look cotidiano.",
+    "materiales": ["miyuki delica", "base metálica plateada", "gancho leverback"],
+    "dimensiones": {
+      "largo_cm": 5.5,
+      "ancho_cm": 3.0
+    },
+    "categoria": "geometrico",
+    "diseno": "escalonado",
+    "colores": ["negro", "dorado"],
+    "precio_cop": 85000,
+    "fotos": [
+      "Fotos/arete1.jpg",
+      "Fotos/arete1_detalle.jpg",
+      "Fotos/arete1_lifestyle.jpg"
+    ],
+    "disponible": true
+  }
+
+]
