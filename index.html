@@ -106,6 +106,43 @@
       .galeria { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
+    .card-precio {
+      font-size: 13px;
+      color: #2c2c2a;
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+    .modal {
+      display: none;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(44,44,42,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal-box {
+      background: #faf9f7;
+      border: 1px solid #e8e6e0;
+      padding: 32px;
+      max-width: 560px;
+      width: 90%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .modal-img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+    .modal-info { display: flex; flex-direction: column; gap: 10px; }
+    .modal-nombre { font-size: 18px; font-weight: 400; letter-spacing: 0.06em; }
+    .modal-precio-grande { font-size: 20px; margin-top: auto; }
+    .modal-fila { font-size: 12px; color: #888; }
+    .modal-fila span { color: #2c2c2a; }
+    .modal-cerrar {
+      position: absolute; top: 16px; right: 20px;
+      font-size: 20px; cursor: pointer; color: #888;
+      background: none; border: none;
+    }
   </style>
 </head>
 <body>
@@ -132,31 +169,7 @@
     <button class="filtro" onclick="filtrar('minimalista', this)">Minimalistas</button>
   </div>
 
-  <section class="galeria" id="galeria">
-    <div class="card" data-categoria="geometrico">
-      <img class="card-img" src="Fotos/arete1.jpg" alt="Aretes geométricos negro y dorado">
-      <div class="card-body">
-        <div class="card-nombre">Aretes geométricos</div>
-        <div class="card-desc">Negro y dorado · miyuki delica</div>
-      </div>
-    </div>
-
-    <div class="card" data-categoria="floral">
-      <img class="card-img" src="Fotos/arete2.jpg" alt="Aretes circulares turquesa">
-      <div class="card-body">
-        <div class="card-nombre">Aretes circulares</div>
-        <div class="card-desc">Turquesa y blanco · tejido peyote</div>
-      </div>
-    </div>
-
-    <div class="card" data-categoria="minimalista">
-      <img class="card-img" src="Fotos/arete3.jpg" alt="Aretes minimalistas plateado">
-      <div class="card-body">
-        <div class="card-nombre">Aretes minimalistas</div>
-        <div class="card-desc">Plateado · miyuki bugle</div>
-      </div>
-    </div>
-  </section>
+ <section class="galeria" id="galeria"></section>
 
   <footer id="contacto">
     <div class="footer-marca">Alimona Studio · Bogotá · 2026</div>
@@ -167,18 +180,71 @@
   </footer>
 
   <script>
+    let productos = [];
+
+    fetch('productos.json')
+      .then(r => r.json())
+      .then(data => {
+        productos = data;
+        renderizar('todos');
+      });
+
+    function renderizar(categoria) {
+      const galeria = document.getElementById('galeria');
+      const filtrados = categoria === 'todos'
+        ? productos
+        : productos.filter(p => p.categoria === categoria);
+
+      galeria.innerHTML = filtrados.map(p => `
+        <div class="card" onclick="abrirDetalle(${p.id})">
+          <img class="card-img" src="${p.foto}" alt="${p.nombre}">
+          <div class="card-body">
+            <div class="card-nombre">${p.nombre}</div>
+            <div class="card-desc">${p.descripcion_corta}</div>
+            <div class="card-precio">$${p.precio_cop.toLocaleString('es-CO')}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
     function filtrar(categoria, btn) {
       document.querySelectorAll('.filtro').forEach(f => f.classList.remove('activo'));
       btn.classList.add('activo');
-      document.querySelectorAll('.card').forEach(card => {
-        if (categoria === 'todos' || card.dataset.categoria === categoria) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      renderizar(categoria);
+    }
+
+    function abrirDetalle(id) {
+      const p = productos.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('modal-nombre').textContent = p.nombre;
+      document.getElementById('modal-img').src = p.foto;
+      document.getElementById('modal-desc').textContent = p.descripcion_larga;
+      document.getElementById('modal-materiales').textContent = p.materiales.join(', ');
+      document.getElementById('modal-dimensiones').textContent = `${p.dimensiones.largo_cm} cm × ${p.dimensiones.ancho_cm} cm`;
+      document.getElementById('modal-colores').textContent = p.colores.join(', ');
+      document.getElementById('modal-diseno').textContent = p.diseno;
+      document.getElementById('modal-precio').textContent = `$${p.precio_cop.toLocaleString('es-CO')}`;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modal').style.display = 'none';
     }
   </script>
-
+    <div class="modal" id="modal" onclick="cerrarModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+      <img class="modal-img" id="modal-img" src="" alt="">
+      <div class="modal-info">
+        <div class="modal-nombre" id="modal-nombre"></div>
+        <div class="modal-fila">Descripción: <span id="modal-desc"></span></div>
+        <div class="modal-fila">Materiales: <span id="modal-materiales"></span></div>
+        <div class="modal-fila">Dimensiones: <span id="modal-dimensiones"></span></div>
+        <div class="modal-fila">Colores: <span id="modal-colores"></span></div>
+        <div class="modal-fila">Diseño: <span id="modal-diseno"></span></div>
+        <div class="modal-precio-grande" id="modal-precio"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
