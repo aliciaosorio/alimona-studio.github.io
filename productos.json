@@ -14,6 +14,7 @@
     "diseno": "escalonado",
     "colores": ["negro", "dorado"],
     "precio_cop": 85000,
+    "foto": "Fotos/arete1.jpg",
     "fotos": [
       "Fotos/arete1.jpg",
       "Fotos/arete1_detalle.jpg",
