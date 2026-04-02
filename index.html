@@ -279,6 +279,7 @@
         <div class="modal-fila">Dimensiones: <span id="modal-dimensiones"></span></div>
         <div class="modal-fila">Colores: <span id="modal-colores"></span></div>
         <div class="modal-fila">Diseño: <span id="modal-diseno"></span></div>
+        <div class="modal-fila">Tiempo de tejido: <span id="modal-tiempo"></span></div>
         <a class="btn-whatsapp" id="modal-whatsapp" href="#" target="_blank">Consultar por WhatsApp</a>
       </div>
     </div>
@@ -342,6 +343,7 @@
       document.getElementById('modal-dimensiones').textContent = `${p.dimensiones.largo_cm} cm × ${p.dimensiones.ancho_cm} cm`;
       document.getElementById('modal-colores').textContent = p.colores.join(', ');
       document.getElementById('modal-diseno').textContent = p.diseno;
+      document.getElementById('modal-tiempo').textContent = p.tiempo_tejido_horas ? `${p.tiempo_tejido_horas} horas` : '—';
       document.getElementById('modal-precio').textContent = `$${p.precio_cop.toLocaleString('es-CO')}`;
       document.getElementById('modal-whatsapp').href =
         `https://wa.me/57TUNUMERO?text=Hola! Me interesa el producto: ${encodeURIComponent(p.nombre)}`;
