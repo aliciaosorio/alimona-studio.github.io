@@ -289,23 +289,6 @@
     "disponible": true
   },
   {
-    "id": 18,
-    "nombre": "Aretes doble estrella crema y dorado",
-    "descripcion_corta": "Dos estrellas en cascada en crema y dorado",
-    "descripcion_larga": "Aretes con dos figuras en forma de estrella unidas en cascada, tejidas con cuentas miyuki delica en crema y dorado. Un diseño llamativo y elegante. Gancho leverback dorado.",
-    "materiales": ["miyuki delica", "gancho leverback dorado"],
-    "dimensiones": { "largo_cm": 4.0, "ancho_cm": 4.0 },
-    "categoria": "floral",
-    "diseno": "doble estrella",
-    "colores": ["crema", "dorado"],
-    "precio_cop": 0,
-    "foto": "Fotos/arete19.jpg",
-    "fotos": ["Fotos/arete19.jpg"],
-    "videos": [],
-    "tiempo_tejido_horas": 3,
-    "disponible": true
-  },
-  {
     "id": 19,
     "nombre": "Aretes marquesa tubular verde lima y negro",
     "descripcion_corta": "Forma marquesa tubular en verde lima y negro",
