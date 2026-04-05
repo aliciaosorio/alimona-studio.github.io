@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200, initial-scale=1.0">
+<title>Materiales Premium - Alimona Studio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    min-height: 1200px;
+    font-family: 'Montserrat', sans-serif;
+    background: #0a0a0a;
+    color: #f5f0eb;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    padding: 60px 80px 40px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 50%, #0a0a0a 100%);
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(191,155,107,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .brand-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #bf9b6b;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #f5f0eb;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 span {
+    color: #bf9b6b;
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    color: #a09888;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+  }
+
+  .gold-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bf9b6b, transparent);
+    margin: 30px auto;
+  }
+
+  /* Materials Section */
+  .materials {
+    display: flex;
+    gap: 0;
+    padding: 0 60px 50px;
+  }
+
+  .material-card {
+    flex: 1;
+    padding: 40px 35px;
+    position: relative;
+    text-align: center;
+    border-right: 1px solid rgba(191,155,107,0.12);
+  }
+
+  .material-card:last-child {
+    border-right: none;
+  }
+
+  .material-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(191,155,107,0.12) 0%, rgba(191,155,107,0.04) 100%);
+    border: 1px solid rgba(191,155,107,0.2);
+  }
+
+  .material-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #bf9b6b;
+    stroke-width: 1.5;
+  }
+
+  .material-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #bf9b6b;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .material-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #f5f0eb;
+  }
+
+  .material-brand {
+    font-size: 13px;
+    color: #bf9b6b;
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+
+  .material-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #a09888;
+    font-weight: 300;
+  }
+
+  .material-badge {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 6px 18px;
+    border: 1px solid rgba(191,155,107,0.3);
+    border-radius: 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bf9b6b;
+    font-weight: 500;
+  }
+
+  /* Comparison Section */
+  .comparison {
+    padding: 50px 80px;
+    background: linear-gradient(180deg, rgba(191,155,107,0.03) 0%, transparent 100%);
+  }
+
+  .comparison h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f5f0eb;
+  }
+
+  .comparison-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #a09888;
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 0.3px;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .compare-table thead th {
+    padding: 16px 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(191,155,107,0.25);
+  }
+
+  .compare-table thead th:first-child {
+    text-align: left;
+    color: #a09888;
+  }
+
+  .compare-table thead th:nth-child(2) {
+    color: #a09888;
+    text-align: center;
+  }
+
+  .compare-table thead th:nth-child(3) {
+    color: #bf9b6b;
+    text-align: center;
+    background: rgba(191,155,107,0.06);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .compare-table tbody td {
+    padding: 18px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: #a09888;
+  }
+
+  .compare-table tbody td:first-child {
+    font-weight: 400;
+    color: #d4ccc2;
+  }
+
+  .compare-table tbody td:nth-child(2) {
+    text-align: center;
+  }
+
+  .compare-table tbody td:nth-child(3) {
+    text-align: center;
+    background: rgba(191,155,107,0.04);
+    color: #f5f0eb;
+    font-weight: 400;
+  }
+
+  .check {
+    color: #bf9b6b;
+    font-size: 18px;
+  }
+
+  .cross {
+    color: #5a4a3a;
+    font-size: 18px;
+  }
+
+  /* Footer promise */
+  .promise {
+    padding: 50px 80px 60px;
+    text-align: center;
+  }
+
+  .promise-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+  }
+
+  .promise-item {
+    text-align: center;
+  }
+
+  .promise-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #bf9b6b;
+    line-height: 1;
+  }
+
+  .promise-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a09888;
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  .footer-brand {
+    margin-top: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #bf9b6b;
+    letter-spacing: 2px;
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: #5a4a3a;
+    margin-top: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="brand-tag">Alimona Studio</div>
+    <h1>Materiales de <span>Clase Mundial</span></h1>
+    <div class="hero-subtitle">
+      Cada pieza es elaborada a mano con materiales premium importados de Japon,
+      seleccionados por su precision, durabilidad y acabado impecable.
+    </div>
+    <div class="gold-line"></div>
+  </div>
+
+  <!-- Materials -->
+  <div class="materials">
+    <!-- Beads -->
+    <div class="material-card">
+      <div class="material-icon">
+        <svg viewBox="0 0 40 40"><circle cx="20" cy="14" r="6" /><circle cx="12" cy="26" r="6" /><circle cx="28" cy="26" r="6" /><circle cx="20" cy="20" r="2" fill="#bf9b6b" stroke="none"/></svg>
+      </div>
+      <div class="material-label">Cuentas</div>
+      <div class="material-name">Miyuki Delica 11/0</div>
+      <div class="material-brand">Fabricadas en Japon</div>
+      <div class="material-desc">
+        Cuentas de vidrio de precision con corte uniforme de 1.6mm.
+        Reconocidas mundialmente por su consistencia perfecta en tamano y color,
+        con acabados que no se decoloran.
+      </div>
+      <div class="material-badge">Vidrio Japones Premium</div>
+    </div>
+
+    <!-- Thread -->
+    <div class="material-card">
+      <div class="material-icon">
+        <svg viewBox="0 0 40 40"><ellipse cx="20" cy="20" rx="14" ry="10" /><ellipse cx="20" cy="20" rx="5" ry="3.5" /><path d="M34 20 Q36 20 37 18" stroke-linecap="round"/></svg>
+      </div>
+      <div class="material-label">Hilo</div>
+      <div class="material-name">Miyuki Nylon Pre-encerado</div>
+      <div class="material-brand">Fabricado en Japon</div>
+      <div class="material-desc">
+        Hilo de nylon de 0.2mm con acabado pre-encerado que garantiza
+        costuras impecables sin enredos. Resistente, flexible y disenado
+        para multiples pasadas por cada cuenta.
+      </div>
+      <div class="material-badge">Nylon Japones de Alta Resistencia</div>
+    </div>
+
+    <!-- Findings -->
+    <div class="material-card">
+      <div class="material-icon">
+        <svg viewBox="0 0 40 40"><path d="M20 6 L20 14" stroke-linecap="round"/><path d="M20 14 Q20 22 14 28 Q10 32 12 34" stroke-linecap="round"/><circle cx="20" cy="6" r="3" /></svg>
+      </div>
+      <div class="material-label">Herrajes</div>
+      <div class="material-name">Acero Banado en Oro 24K</div>
+      <div class="material-brand">Acero Inoxidable + Oro Real</div>
+      <div class="material-desc">
+        Ganchos leverback de acero inoxidable con banado real en oro de 24 quilates.
+        Hipoalergenicos, resistentes a la oxidacion y con cierre seguro
+        que protege tu inversion.
+      </div>
+      <div class="material-badge">Oro 24K sobre Acero Inoxidable</div>
+    </div>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <!-- Comparison -->
+  <div class="comparison">
+    <h2>La Diferencia en Cada Detalle</h2>
+    <div class="comparison-subtitle">Nuestros materiales vs. bisuteria convencional del mercado</div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Caracteristica</th>
+          <th>Bisuteria Comun</th>
+          <th>Alimona Studio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cuentas de vidrio japones (Miyuki)</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Uniformidad perfecta entre cuentas</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Colores resistentes a la decoloracion</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Herrajes banados en oro real (24K)</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Acero inoxidable hipoalergenico</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Hilo pre-encerado japones resistente</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Cierre leverback seguro anti-caida</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+        <tr>
+          <td>Elaboracion 100% artesanal</td>
+          <td><span class="cross">&times;</span></td>
+          <td><span class="check">&check;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Promise -->
+  <div class="promise">
+    <div class="gold-line"></div>
+    <div class="promise-grid">
+      <div class="promise-item">
+        <div class="promise-number">1440+</div>
+        <div class="promise-text">Cuentas por diseno</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-number">24K</div>
+        <div class="promise-text">Oro en herrajes</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-number">100%</div>
+        <div class="promise-text">Hecho a mano</div>
+      </div>
+      <div class="promise-item">
+        <div class="promise-number">0.2mm</div>
+        <div class="promise-text">Precision del hilo</div>
+      </div>
+    </div>
+
+    <div class="footer-brand">Alimona Studio</div>
+    <div class="footer-tagline">Artesania con materiales de clase mundial</div>
+  </div>
+
+</body>
+</html>
