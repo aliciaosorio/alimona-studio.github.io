@@ -72,14 +72,41 @@
       border: 1px solid #e8e6e0;
       transition: border-color 0.2s;
       cursor: pointer;
+      position: relative;
     }
     .card:hover { border-color: #2c2c2a; }
+    .card-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
     .card-img {
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;
       display: block;
       background: #f0ede8;
+    }
+    .card-fotos-badge {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(44,44,42,0.75);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.02em;
+      pointer-events: none;
+    }
+    .card-fotos-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
     }
     .card-body { padding: 14px 16px; }
     .card-nombre { font-size: 14px; margin-bottom: 4px; }
@@ -129,6 +156,10 @@
       margin-bottom: 40px;
     }
     .modal-galeria { display: flex; flex-direction: column; gap: 8px; }
+    .modal-img-wrap {
+      position: relative;
+      width: 100%;
+    }
     .modal-img-principal {
       width: 100%;
       aspect-ratio: 1;
@@ -144,6 +175,45 @@
       display: none;
       background: #000;
     }
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(44,44,42,0.6);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .modal-nav:hover { background: rgba(44,44,42,0.85); }
+    .modal-nav-prev { left: 8px; }
+    .modal-nav-next { right: 8px; }
+    .modal-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+    }
+    .modal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d4d0ca;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s;
+    }
+    .modal-dot.activo { background: #2c2c2a; }
+    .modal-dot:hover { background: #888; }
     .modal-thumbnails {
       display: flex;
       gap: 8px;
@@ -264,11 +334,16 @@
   <!-- MODAL -->
   <div class="modal" id="modal" onclick="cerrarModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+      <button class="modal-cerrar" onclick="cerrarModal()">&#10005;</button>
 
       <div class="modal-galeria">
-        <img class="modal-img-principal" id="modal-img-principal" src="" alt="">
-        <video class="modal-video-principal" id="modal-video-principal" controls playsinline></video>
+        <div class="modal-img-wrap" id="modal-img-wrap">
+          <img class="modal-img-principal" id="modal-img-principal" src="" alt="">
+          <video class="modal-video-principal" id="modal-video-principal" controls playsinline></video>
+          <button class="modal-nav modal-nav-prev" onclick="navegarMedio(-1)">&#8249;</button>
+          <button class="modal-nav modal-nav-next" onclick="navegarMedio(1)">&#8250;</button>
+        </div>
+        <div class="modal-dots" id="modal-dots"></div>
         <div class="modal-thumbnails" id="modal-thumbnails"></div>
       </div>
 
@@ -288,6 +363,8 @@
 
   <script>
     let productos = [];
+    let mediosActuales = [];
+    let indiceActual = 0;
 
     fetch('productos.json')
       .then(r => r.json())
@@ -300,22 +377,38 @@
           '<p style="color:#aaa;padding:24px;">No se pudieron cargar los productos.</p>';
       });
 
+    function contarMedios(p) {
+      return (p.fotos || [p.foto]).length + (p.videos || []).length;
+    }
+
     function renderizar(categoria) {
       const galeria = document.getElementById('galeria');
       const filtrados = categoria === 'todos'
         ? productos
         : productos.filter(p => p.categoria === categoria);
 
-      galeria.innerHTML = filtrados.map(p => `
-        <div class="card" onclick="abrirDetalle(${p.id})">
-          <img class="card-img" src="${p.foto}" alt="${p.nombre}">
-          <div class="card-body">
-            <div class="card-nombre">${p.nombre}</div>
-            <div class="card-desc">${p.descripcion_corta}</div>
-            <div class="card-precio">$${p.precio_cop.toLocaleString('es-CO')}</div>
+      galeria.innerHTML = filtrados.map(p => {
+        const total = contarMedios(p);
+        const badge = total > 1
+          ? `<div class="card-fotos-badge">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              ${total}
+            </div>`
+          : '';
+        return `
+          <div class="card" onclick="abrirDetalle(${p.id})">
+            <div class="card-img-wrap">
+              <img class="card-img" src="${p.foto}" alt="${p.nombre}">
+              ${badge}
+            </div>
+            <div class="card-body">
+              <div class="card-nombre">${p.nombre}</div>
+              <div class="card-desc">${p.descripcion_corta}</div>
+              <div class="card-precio">$${p.precio_cop.toLocaleString('es-CO')}</div>
+            </div>
           </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     function filtrar(categoria, btn) {
@@ -332,40 +425,54 @@
       const p = productos.find(x => x.id === id);
       if (!p) return;
 
-      // Combinar fotos y videos en un solo array de medios
-      const medios = [
+      mediosActuales = [
         ...(p.fotos || [p.foto]),
         ...(p.videos || [])
       ];
+      indiceActual = 0;
 
       document.getElementById('modal-nombre').textContent = p.nombre;
       document.getElementById('modal-desc').textContent = p.descripcion_larga;
       document.getElementById('modal-materiales').textContent = p.materiales.join(', ');
-      document.getElementById('modal-dimensiones').textContent = `${p.dimensiones.largo_cm} cm × ${p.dimensiones.ancho_cm} cm`;
+      document.getElementById('modal-dimensiones').textContent = `${p.dimensiones.largo_cm} cm \u00d7 ${p.dimensiones.ancho_cm} cm`;
       document.getElementById('modal-colores').textContent = p.colores.join(', ');
       document.getElementById('modal-diseno').textContent = p.diseno;
-      document.getElementById('modal-tiempo').textContent = p.tiempo_tejido_horas ? `${p.tiempo_tejido_horas} horas` : '—';
+      document.getElementById('modal-tiempo').textContent = p.tiempo_tejido_horas ? `${p.tiempo_tejido_horas} horas` : '\u2014';
       document.getElementById('modal-precio').textContent = `$${p.precio_cop.toLocaleString('es-CO')}`;
       document.getElementById('modal-whatsapp').href =
         `https://wa.me/57TUNUMERO?text=Hola! Me interesa el producto: ${encodeURIComponent(p.nombre)}`;
 
-      // Mostrar primer medio
-      mostrarMedio(medios[0]);
+      // Mostrar/ocultar flechas
+      const wrap = document.getElementById('modal-img-wrap');
+      wrap.querySelectorAll('.modal-nav').forEach(btn => {
+        btn.style.display = mediosActuales.length > 1 ? 'flex' : 'none';
+      });
+
+      // Generar puntos indicadores
+      const dotsContainer = document.getElementById('modal-dots');
+      if (mediosActuales.length > 1) {
+        dotsContainer.innerHTML = mediosActuales.map((_, i) =>
+          `<button class="modal-dot ${i === 0 ? 'activo' : ''}" onclick="irAMedio(${i})"></button>`
+        ).join('');
+      } else {
+        dotsContainer.innerHTML = '';
+      }
 
       // Generar thumbnails
       const contenedor = document.getElementById('modal-thumbnails');
-      contenedor.innerHTML = medios.map((m, i) => {
+      contenedor.innerHTML = mediosActuales.map((m, i) => {
         if (esVideo(m)) {
-          return `<div class="thumb-video-wrap ${i === 0 ? 'activo' : ''}" onclick="seleccionarMedio(this, '${m}')">
-                    <span class="thumb-play-icon">▶</span>
+          return `<div class="thumb-video-wrap ${i === 0 ? 'activo' : ''}" onclick="irAMedio(${i})">
+                    <span class="thumb-play-icon">\u25b6</span>
                   </div>`;
         } else {
           return `<img class="thumbnail ${i === 0 ? 'activo' : ''}"
                        src="${m}" alt="${p.nombre} ${i+1}"
-                       onclick="seleccionarMedio(this, '${m}')">`;
+                       onclick="irAMedio(${i})">`;
         }
       }).join('');
 
+      mostrarMedio(mediosActuales[0]);
       document.getElementById('modal').style.display = 'flex';
     }
 
@@ -386,11 +493,27 @@
       }
     }
 
-    function seleccionarMedio(thumb, ruta) {
-      // Quitar activo de todos los thumbnails (imágenes y videos)
-      document.querySelectorAll('.thumbnail, .thumb-video-wrap').forEach(t => t.classList.remove('activo'));
-      thumb.classList.add('activo');
-      mostrarMedio(ruta);
+    function actualizarIndicadores() {
+      // Actualizar puntos
+      document.querySelectorAll('.modal-dot').forEach((dot, i) => {
+        dot.classList.toggle('activo', i === indiceActual);
+      });
+      // Actualizar thumbnails
+      document.querySelectorAll('.thumbnail, .thumb-video-wrap').forEach((t, i) => {
+        t.classList.toggle('activo', i === indiceActual);
+      });
+    }
+
+    function irAMedio(indice) {
+      indiceActual = indice;
+      mostrarMedio(mediosActuales[indiceActual]);
+      actualizarIndicadores();
+    }
+
+    function navegarMedio(direccion) {
+      indiceActual = (indiceActual + direccion + mediosActuales.length) % mediosActuales.length;
+      mostrarMedio(mediosActuales[indiceActual]);
+      actualizarIndicadores();
     }
 
     function cerrarModal() {
