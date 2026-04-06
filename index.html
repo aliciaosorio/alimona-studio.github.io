@@ -279,6 +279,53 @@
     }
     .btn-whatsapp:hover { background: #444; }
 
+    /* LIGHTBOX ZOOM */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+    }
+    .lightbox-cerrar {
+      position: absolute;
+      top: 16px; right: 24px;
+      font-size: 28px;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.3); }
+    .lightbox-nav-prev { left: 16px; }
+    .lightbox-nav-next { right: 16px; }
+
     @media (max-width: 768px) {
       nav, .hero, .filtros, .galeria, footer { padding-left: 24px; padding-right: 24px; }
       .galeria { grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -338,7 +385,7 @@
 
       <div class="modal-galeria">
         <div class="modal-img-wrap" id="modal-img-wrap">
-          <img class="modal-img-principal" id="modal-img-principal" src="" alt="">
+          <img class="modal-img-principal" id="modal-img-principal" src="" alt="" onclick="abrirLightbox()">
           <video class="modal-video-principal" id="modal-video-principal" controls playsinline></video>
           <button class="modal-nav modal-nav-prev" onclick="navegarMedio(-1)">&#8249;</button>
           <button class="modal-nav modal-nav-next" onclick="navegarMedio(1)">&#8250;</button>
@@ -359,6 +406,14 @@
         <a class="btn-whatsapp" id="modal-whatsapp" href="#" target="_blank">Consultar por WhatsApp</a>
       </div>
     </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="cerrarLightbox()">
+    <button class="lightbox-cerrar" onclick="cerrarLightbox()">&#10005;</button>
+    <button class="lightbox-nav lightbox-nav-prev" onclick="event.stopPropagation(); navegarLightbox(-1)">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation(); navegarLightbox(1)">
+    <button class="lightbox-nav lightbox-nav-next" onclick="event.stopPropagation(); navegarLightbox(1)">&#8250;</button>
   </div>
 
   <script>
@@ -512,6 +567,33 @@
 
     function navegarMedio(direccion) {
       indiceActual = (indiceActual + direccion + mediosActuales.length) % mediosActuales.length;
+      mostrarMedio(mediosActuales[indiceActual]);
+      actualizarIndicadores();
+    }
+
+    function abrirLightbox() {
+      if (esVideo(mediosActuales[indiceActual])) return;
+      document.getElementById('lightbox-img').src = mediosActuales[indiceActual];
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'flex';
+      // Ocultar flechas si solo hay fotos (no videos) y es 1
+      const soloFotos = mediosActuales.filter(m => !esVideo(m));
+      lb.querySelectorAll('.lightbox-nav').forEach(btn => {
+        btn.style.display = soloFotos.length > 1 ? 'flex' : 'none';
+      });
+    }
+
+    function cerrarLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    function navegarLightbox(dir) {
+      let nuevo = indiceActual;
+      do {
+        nuevo = (nuevo + dir + mediosActuales.length) % mediosActuales.length;
+      } while (esVideo(mediosActuales[nuevo]) && nuevo !== indiceActual);
+      indiceActual = nuevo;
+      document.getElementById('lightbox-img').src = mediosActuales[indiceActual];
       mostrarMedio(mediosActuales[indiceActual]);
       actualizarIndicadores();
     }
