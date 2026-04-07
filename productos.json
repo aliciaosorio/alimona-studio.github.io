@@ -12,7 +12,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete1.jpg",
     "fotos": ["Fotos/arete1.jpg", "Fotos/arete1-3.jpg", "Fotos/arete1-4.jpg"],
-    "videos": ["Fotos/arete1-v1.mp4"],
+    "videos": ["Fotos/arete1-v1.mp4", "Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 4,
     "disponible": true
   },
@@ -29,7 +29,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete2.jpg",
     "fotos": ["Fotos/arete2.jpg", "Fotos/arete2-1.jpg", "Fotos/arete2-2.jpg", "Fotos/arete2-3.jpg", "Fotos/arete2-4.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 6,
     "disponible": true
   },
@@ -46,7 +46,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete3.jpg",
     "fotos": ["Fotos/arete3.jpg", "Fotos/arete3-1.jpg", "Fotos/arete3-2.jpg", "Fotos/arete3-3.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 4,
     "disponible": true
   },
@@ -63,7 +63,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete4.jpg",
     "fotos": ["Fotos/arete4.jpg", "Fotos/arete4-1.jpg", "Fotos/arete4-2.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 4,
     "disponible": true
   },
@@ -80,7 +80,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete5.jpg",
     "fotos": ["Fotos/arete5.jpg", "Fotos/arete5-1.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 8,
     "disponible": true
   },
@@ -97,7 +97,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete6.jpg",
     "fotos": ["Fotos/arete6.jpg", "Fotos/arete6-1.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 5,
     "disponible": true
   },
@@ -114,7 +114,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete7.jpg",
     "fotos": ["Fotos/arete7.jpg", "Fotos/arete7-1.jpg", "Fotos/arete7-2.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 2,
     "disponible": true
   },
@@ -131,7 +131,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete8.jpg",
     "fotos": ["Fotos/arete8.jpg", "Fotos/arete8-1.jpg", "Fotos/arete8-2.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 3,
     "disponible": true
   },
@@ -148,7 +148,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete9.jpg",
     "fotos": ["Fotos/arete9.jpg", "Fotos/arete9-1.jpg", "Fotos/arete9-2.jpg", "Fotos/arete9-3.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 5,
     "disponible": true
   },
@@ -165,7 +165,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete10.jpg",
     "fotos": ["Fotos/arete10.jpg", "Fotos/arete10-1.jpg", "Fotos/arete10-4.jpg", "Fotos/arete10-5.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 4,
     "disponible": true
   },
@@ -182,7 +182,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete11.jpg",
     "fotos": ["Fotos/arete11.jpg", "Fotos/arete11-1.jpg", "Fotos/arete11-2.jpg", "Fotos/arete11-3.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 6,
     "disponible": true
   },
@@ -199,7 +199,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete13.jpg",
     "fotos": ["Fotos/arete13.jpg", "Fotos/arete13-1.jpg", "Fotos/arete13-3.jpg", "Fotos/arete13-4.jpg", "Fotos/arete13-5.jpg", "Fotos/arete13-6.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 6,
     "disponible": true
   },
@@ -216,7 +216,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete14.jpg",
     "fotos": ["Fotos/arete14.jpg", "Fotos/arete14-1.jpg", "Fotos/arete14-2.jpg", "Fotos/arete14-3.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 4,
     "disponible": true
   },
@@ -233,7 +233,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete15.jpg",
     "fotos": ["Fotos/arete15.jpg", "Fotos/arete15-1.jpg", "Fotos/arete15-2.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 5,
     "disponible": true
   },
@@ -250,7 +250,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete16.jpg",
     "fotos": ["Fotos/arete16.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 5,
     "disponible": true
   },
@@ -267,7 +267,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete17.jpg",
     "fotos": ["Fotos/arete17.jpg", "Fotos/arete17-1.jpg", "Fotos/arete17-2.jpg", "Fotos/arete17-3.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 3,
     "disponible": true
   },
@@ -284,7 +284,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete18.jpg",
     "fotos": ["Fotos/arete18.jpg", "Fotos/arete18-1.jpg", "Fotos/arete18-2.jpg", "Fotos/arete18-3.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 7,
     "disponible": true
   },
@@ -301,7 +301,7 @@
     "precio_cop": 0,
     "foto": "Fotos/arete12.jpg",
     "fotos": ["Fotos/arete12.jpg", "Fotos/arete12-1.jpg", "Fotos/arete12-2.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 5,
     "disponible": true
   },
@@ -318,8 +318,59 @@
     "precio_cop": 0,
     "foto": "Fotos/arete20.jpg",
     "fotos": ["Fotos/arete20.jpg"],
-    "videos": [],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "tiempo_tejido_horas": 6,
+    "disponible": true
+  },
+  {
+    "id": 21,
+    "nombre": "Aretes diseño 21",
+    "descripcion_corta": "Aretes artesanales en miyuki",
+    "descripcion_larga": "Aretes tejidos a mano con cuentas japonesas miyuki delica. Diseño exclusivo hecho con dedicación y atención al detalle.",
+    "materiales": ["miyuki delica", "gancho leverback dorado"],
+    "dimensiones": { "largo_cm": 5.0, "ancho_cm": 3.5 },
+    "categoria": "geometrico",
+    "diseno": "artesanal",
+    "colores": ["variado"],
+    "precio_cop": 0,
+    "foto": "Fotos/arete21.jpg",
+    "fotos": ["Fotos/arete21.jpg"],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
+    "tiempo_tejido_horas": 4,
+    "disponible": true
+  },
+  {
+    "id": 22,
+    "nombre": "Aretes diseño 22",
+    "descripcion_corta": "Aretes artesanales en miyuki",
+    "descripcion_larga": "Aretes tejidos a mano con cuentas japonesas miyuki delica. Diseño exclusivo hecho con dedicación y atención al detalle.",
+    "materiales": ["miyuki delica", "gancho leverback dorado"],
+    "dimensiones": { "largo_cm": 5.0, "ancho_cm": 3.5 },
+    "categoria": "geometrico",
+    "diseno": "artesanal",
+    "colores": ["variado"],
+    "precio_cop": 0,
+    "foto": "Fotos/arete22.jpg",
+    "fotos": ["Fotos/arete22.jpg"],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
+    "tiempo_tejido_horas": 4,
+    "disponible": true
+  },
+  {
+    "id": 23,
+    "nombre": "Aretes diseño 23",
+    "descripcion_corta": "Aretes artesanales en miyuki",
+    "descripcion_larga": "Aretes tejidos a mano con cuentas japonesas miyuki delica. Diseño exclusivo hecho con dedicación y atención al detalle.",
+    "materiales": ["miyuki delica", "gancho leverback dorado"],
+    "dimensiones": { "largo_cm": 5.0, "ancho_cm": 3.5 },
+    "categoria": "geometrico",
+    "diseno": "artesanal",
+    "colores": ["variado"],
+    "precio_cop": 0,
+    "foto": "Fotos/arete23.jpg",
+    "fotos": ["Fotos/arete23.jpg"],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
+    "tiempo_tejido_horas": 4,
     "disponible": true
   }
 ]
