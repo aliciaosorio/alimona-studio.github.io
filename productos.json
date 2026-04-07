@@ -8,12 +8,11 @@
     "dimensiones": { "largo_cm": 5.5, "ancho_cm": 3.0 },
     "categoria": "geometrico",
     "diseno": "escalonado",
-    "colores": ["negro", "dorado", "plateado"],
-    "precio_cop": 0,
+    "colores": ["negro", "dorado"],
+    "precio_cop": 95000,
     "foto": "Fotos/arete1.jpg",
-    "fotos": ["Fotos/arete1.jpg", "Fotos/arete1-3.jpg", "Fotos/arete1-4.jpg"],
-    "videos": ["Fotos/arete1-v1.mp4", "Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
+    "fotos": ["Fotos/arete1.jpg", "Fotos/arete1_detalle.jpeg", "Fotos/arete1_lifestyle.jpeg"],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "disponible": true
   },
   {
@@ -26,11 +25,10 @@
     "categoria": "geometrico",
     "diseno": "diamante",
     "colores": ["negro", "blanco", "dorado", "marrón"],
-    "precio_cop": 0,
+    "precio_cop": 150000,
     "foto": "Fotos/arete2.jpg",
-    "fotos": ["Fotos/arete2.jpg", "Fotos/arete2-1.jpg", "Fotos/arete2-2.jpg", "Fotos/arete2-3.jpg", "Fotos/arete2-4.jpg"],
+    "fotos": ["Fotos/arete2.jpg", "Fotos/arete2-1.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -43,11 +41,10 @@
     "categoria": "geometrico",
     "diseno": "hoja",
     "colores": ["negro", "dorado", "blanco"],
-    "precio_cop": 0,
+    "precio_cop": 95000,
     "foto": "Fotos/arete3.jpg",
-    "fotos": ["Fotos/arete3.jpg", "Fotos/arete3-1.jpg", "Fotos/arete3-2.jpg", "Fotos/arete3-3.jpg"],
+    "fotos": ["Fotos/arete3.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -60,11 +57,10 @@
     "categoria": "geometrico",
     "diseno": "zigzag escalonado",
     "colores": ["negro", "blanco crema", "marrón"],
-    "precio_cop": 0,
+    "precio_cop": 100000,
     "foto": "Fotos/arete4.jpg",
-    "fotos": ["Fotos/arete4.jpg", "Fotos/arete4-1.jpg", "Fotos/arete4-2.jpg"],
+    "fotos": ["Fotos/arete4.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -77,11 +73,10 @@
     "categoria": "floral",
     "diseno": "medallones circulares",
     "colores": ["negro", "verde oliva", "iridiscente"],
-    "precio_cop": 0,
+    "precio_cop": 130000,
     "foto": "Fotos/arete5.jpg",
-    "fotos": ["Fotos/arete5.jpg", "Fotos/arete5-1.jpg"],
+    "fotos": ["Fotos/arete5.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 8,
     "disponible": true
   },
   {
@@ -94,11 +89,10 @@
     "categoria": "minimalista",
     "diseno": "flecos",
     "colores": ["borgoña", "crema", "moteado"],
-    "precio_cop": 0,
+    "precio_cop": 145000,
     "foto": "Fotos/arete6.jpg",
-    "fotos": ["Fotos/arete6.jpg", "Fotos/arete6-1.jpg"],
+    "fotos": ["Fotos/arete6.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -111,11 +105,10 @@
     "categoria": "minimalista",
     "diseno": "argolla plana",
     "colores": ["verde lima", "dorado", "bronce"],
-    "precio_cop": 0,
+    "precio_cop": 70000,
     "foto": "Fotos/arete7.jpg",
-    "fotos": ["Fotos/arete7.jpg", "Fotos/arete7-1.jpg", "Fotos/arete7-2.jpg"],
+    "fotos": ["Fotos/arete7.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 2,
     "disponible": true
   },
   {
@@ -128,11 +121,10 @@
     "categoria": "geometrico",
     "diseno": "triángulo",
     "colores": ["bronce", "verde lima", "blanco", "borgoña"],
-    "precio_cop": 0,
+    "precio_cop": 90000,
     "foto": "Fotos/arete8.jpg",
-    "fotos": ["Fotos/arete8.jpg", "Fotos/arete8-1.jpg", "Fotos/arete8-2.jpg"],
+    "fotos": ["Fotos/arete8.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 3,
     "disponible": true
   },
   {
@@ -145,11 +137,10 @@
     "categoria": "floral",
     "diseno": "sol radiante",
     "colores": ["borgoña", "dorado", "negro"],
-    "precio_cop": 0,
+    "precio_cop": 120000,
     "foto": "Fotos/arete9.jpg",
-    "fotos": ["Fotos/arete9.jpg", "Fotos/arete9-1.jpg", "Fotos/arete9-2.jpg", "Fotos/arete9-3.jpg"],
+    "fotos": ["Fotos/arete9.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -162,11 +153,10 @@
     "categoria": "minimalista",
     "diseno": "tubular",
     "colores": ["azul turquesa", "dorado"],
-    "precio_cop": 0,
+    "precio_cop": 75000,
     "foto": "Fotos/arete10.jpg",
-    "fotos": ["Fotos/arete10.jpg", "Fotos/arete10-1.jpg", "Fotos/arete10-4.jpg", "Fotos/arete10-5.jpg"],
+    "fotos": ["Fotos/arete10.jpg", "Fotos/arete10-1.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -179,11 +169,10 @@
     "categoria": "floral",
     "diseno": "sol floral",
     "colores": ["turquesa", "crema", "dorado", "negro"],
-    "precio_cop": 0,
+    "precio_cop": 125000,
     "foto": "Fotos/arete11.jpg",
-    "fotos": ["Fotos/arete11.jpg", "Fotos/arete11-1.jpg", "Fotos/arete11-2.jpg", "Fotos/arete11-3.jpg"],
+    "fotos": ["Fotos/arete11.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -196,11 +185,10 @@
     "categoria": "geometrico",
     "diseno": "marquesa calada",
     "colores": ["verde lima", "negro"],
-    "precio_cop": 0,
+    "precio_cop": 105000,
     "foto": "Fotos/arete13.jpg",
-    "fotos": ["Fotos/arete13.jpg", "Fotos/arete13-1.jpg", "Fotos/arete13-3.jpg", "Fotos/arete13-4.jpg", "Fotos/arete13-5.jpg", "Fotos/arete13-6.jpg"],
+    "fotos": ["Fotos/arete13.jpg", "Fotos/arete13-1.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -213,11 +201,10 @@
     "categoria": "minimalista",
     "diseno": "tubular diagonal",
     "colores": ["negro", "dorado"],
-    "precio_cop": 0,
+    "precio_cop": 75000,
     "foto": "Fotos/arete14.jpg",
-    "fotos": ["Fotos/arete14.jpg", "Fotos/arete14-1.jpg", "Fotos/arete14-2.jpg", "Fotos/arete14-3.jpg"],
+    "fotos": ["Fotos/arete14.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -230,11 +217,10 @@
     "categoria": "geometrico",
     "diseno": "argolla ancha",
     "colores": ["negro", "dorado"],
-    "precio_cop": 0,
+    "precio_cop": 150000,
     "foto": "Fotos/arete15.jpg",
-    "fotos": ["Fotos/arete15.jpg", "Fotos/arete15-1.jpg", "Fotos/arete15-2.jpg"],
+    "fotos": ["Fotos/arete15.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -247,11 +233,10 @@
     "categoria": "geometrico",
     "diseno": "espiral",
     "colores": ["verde lima", "marrón", "moteado"],
-    "precio_cop": 0,
+    "precio_cop": 155000,
     "foto": "Fotos/arete16.jpg",
     "fotos": ["Fotos/arete16.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
@@ -264,11 +249,10 @@
     "categoria": "geometrico",
     "diseno": "diamante",
     "colores": ["negro", "cobre", "dorado"],
-    "precio_cop": 0,
+    "precio_cop": 90000,
     "foto": "Fotos/arete17.jpg",
-    "fotos": ["Fotos/arete17.jpg", "Fotos/arete17-1.jpg", "Fotos/arete17-2.jpg", "Fotos/arete17-3.jpg"],
+    "fotos": ["Fotos/arete17.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 3,
     "disponible": true
   },
   {
@@ -281,45 +265,58 @@
     "categoria": "floral",
     "diseno": "cascada de estrellas",
     "colores": ["bronce", "iridiscente", "dorado"],
-    "precio_cop": 0,
+    "precio_cop": 120000,
     "foto": "Fotos/arete18.jpg",
-    "fotos": ["Fotos/arete18.jpg", "Fotos/arete18-1.jpg", "Fotos/arete18-2.jpg", "Fotos/arete18-3.jpg"],
+    "fotos": ["Fotos/arete18.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 7,
+    "disponible": true
+  },
+  {
+    "id": 18,
+    "nombre": "Argollas media luna negro y crema",
+    "descripcion_corta": "Argollas media luna en negro mate con borde crema moteado",
+    "descripcion_larga": "Argollas con diseño de media luna tejidas en negro mate con un borde en crema moteado. Delicadas y modernas, ideales para uso diario. Aro dorado.",
+    "materiales": ["miyuki delica", "aro dorado"],
+    "dimensiones": { "largo_cm": 4.0, "ancho_cm": 4.0 },
+    "categoria": "floral",
+    "diseno": "media luna",
+    "colores": ["negro", "crema", "moteado"],
+    "precio_cop": 110000,
+    "foto": "Fotos/arete19.jpg",
+    "fotos": ["Fotos/arete19.jpg"],
+    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
     "disponible": true
   },
   {
     "id": 19,
-    "nombre": "Aretes marquesa tubular verde lima y negro",
-    "descripcion_corta": "Forma marquesa tubular en verde lima y negro",
-    "descripcion_larga": "Aretes en forma de marquesa tejidos con técnica tubular peyote en verde lima y negro. Su estructura tridimensional y forma ovalada los hacen ligeros y llamativos. Gancho leverback plateado.",
-    "materiales": ["miyuki delica", "gancho leverback plateado"],
-    "dimensiones": { "largo_cm": 6.0, "ancho_cm": 2.5 },
-    "categoria": "geometrico",
-    "diseno": "marquesa tubular",
-    "colores": ["verde lima", "negro"],
-    "precio_cop": 0,
-    "foto": "Fotos/arete12.jpg",
-    "fotos": ["Fotos/arete12.jpg", "Fotos/arete12-1.jpg", "Fotos/arete12-2.jpg"],
+    "nombre": "Aretes doble flor crema y bronce",
+    "descripcion_corta": "Dos flores en cascada, crema con centro bronce",
+    "descripcion_larga": "Aretes con dos medallones florales en cascada tejidos en crema con detalles en bronce oscuro y centro puntual. Ligeros y llamativos, perfectos para resaltar cualquier look. Gancho leverback dorado.",
+    "materiales": ["miyuki delica", "gancho leverback dorado"],
+    "dimensiones": { "largo_cm": 7.0, "ancho_cm": 3.5 },
+    "categoria": "floral",
+    "diseno": "doble flor",
+    "colores": ["crema", "bronce", "dorado"],
+    "precio_cop": 130000,
+    "foto": "Fotos/arete19.jpg",
+    "fotos": ["Fotos/arete19.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 5,
     "disponible": true
   },
   {
     "id": 20,
-    "nombre": "Aretes flor negro y dorado",
-    "descripcion_corta": "Forma de flor en negro con detalles dorados",
-    "descripcion_larga": "Aretes en forma de flor tejidos con cuentas miyuki delica en negro con delicados detalles dorados que marcan los pétalos. Un diseño elegante y sofisticado ideal para ocasiones especiales.",
-    "materiales": ["miyuki delica", "gancho leverback dorado"],
-    "dimensiones": { "largo_cm": 5.0, "ancho_cm": 4.0 },
-    "categoria": "floral",
-    "diseno": "flor",
+    "nombre": "Argollas chevron negro y dorado",
+    "descripcion_corta": "Argollas anchas con patrón chevron en negro y dorado",
+    "descripcion_larga": "Argollas de gran volumen con patrón chevron tejido en negro mate y dorado. Su tamaño y diseño gráfico las hace ideales para looks audaces y elegantes. Aro dorado.",
+    "materiales": ["miyuki delica", "aro dorado"],
+    "dimensiones": { "largo_cm": 4.0, "ancho_cm": 4.0 },
+    "categoria": "geometrico",
+    "diseno": "chevron",
     "colores": ["negro", "dorado"],
-    "precio_cop": 0,
+    "precio_cop": 150000,
     "foto": "Fotos/arete20.jpg",
     "fotos": ["Fotos/arete20.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 6,
     "disponible": true
   },
   {
@@ -336,7 +333,6 @@
     "foto": "Fotos/arete21.jpg",
     "fotos": ["Fotos/arete21.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -353,7 +349,6 @@
     "foto": "Fotos/arete22.jpg",
     "fotos": ["Fotos/arete22.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   },
   {
@@ -370,7 +365,6 @@
     "foto": "Fotos/arete23.jpg",
     "fotos": ["Fotos/arete23.jpg"],
     "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "tiempo_tejido_horas": 4,
     "disponible": true
   }
 ]
