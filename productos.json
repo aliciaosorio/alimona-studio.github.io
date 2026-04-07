@@ -272,22 +272,6 @@
     "disponible": true
   },
   {
-    "id": 18,
-    "nombre": "Argollas media luna negro y crema",
-    "descripcion_corta": "Argollas media luna en negro mate con borde crema moteado",
-    "descripcion_larga": "Argollas con diseño de media luna tejidas en negro mate con un borde en crema moteado. Delicadas y modernas, ideales para uso diario. Aro dorado.",
-    "materiales": ["miyuki delica", "aro dorado"],
-    "dimensiones": { "largo_cm": 4.0, "ancho_cm": 4.0 },
-    "categoria": "floral",
-    "diseno": "media luna",
-    "colores": ["negro", "crema", "moteado"],
-    "precio_cop": 110000,
-    "foto": "Fotos/arete19.jpg",
-    "fotos": ["Fotos/arete19.jpg"],
-    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "disponible": true
-  },
-  {
     "id": 20,
     "nombre": "Argollas chevron negro y dorado",
     "descripcion_corta": "Argollas anchas con patrón chevron en negro y dorado",
