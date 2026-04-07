@@ -288,22 +288,6 @@
     "disponible": true
   },
   {
-    "id": 19,
-    "nombre": "Aretes doble flor crema y bronce",
-    "descripcion_corta": "Dos flores en cascada, crema con centro bronce",
-    "descripcion_larga": "Aretes con dos medallones florales en cascada tejidos en crema con detalles en bronce oscuro y centro puntual. Ligeros y llamativos, perfectos para resaltar cualquier look. Gancho leverback dorado.",
-    "materiales": ["miyuki delica", "gancho leverback dorado"],
-    "dimensiones": { "largo_cm": 7.0, "ancho_cm": 3.5 },
-    "categoria": "floral",
-    "diseno": "doble flor",
-    "colores": ["crema", "bronce", "dorado"],
-    "precio_cop": 130000,
-    "foto": "Fotos/arete19.jpg",
-    "fotos": ["Fotos/arete19.jpg"],
-    "videos": ["Fotos/V-1 Hecho a mano.mp4"],
-    "disponible": true
-  },
-  {
     "id": 20,
     "nombre": "Argollas chevron negro y dorado",
     "descripcion_corta": "Argollas anchas con patrón chevron en negro y dorado",
